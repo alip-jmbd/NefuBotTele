@@ -1,11 +1,12 @@
-// Developer: LippWangsaff (@lipfyuri)
+// Creator: LippWangsaff (@lipfyuri)
+// Kerja sama / tanya sesuatu? -> nefu.life/nefu
 
 const { Telegraf } = require('telegraf');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const chalk = require('chalk');
 
-const BOT_TOKEN = '8284536206:AAH7DXijA1c4J09eV4_d-CBha9Mo1odQBZA';
-const GEMINI_API_KEY = 'AIzaSyCiS0OMJfaMxTRCNRzcIhfnYjom05A3O9o';
+const BOT_TOKEN = 'isi bot token disini'; // dapet dari bot father di tele
+const GEMINI_API_KEY = 'AIzaSyCiS0OMJfaMxTRCNRzcIhfnYjom05A3O9o'; // ganti apikey kalau abis, ke aistudio.google.com/apikey
 
 const bot = new Telegraf(BOT_TOKEN);
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
@@ -109,4 +110,5 @@ bot.launch();
 console.log(chalk.blue('Nefu-chan sudah siap! ...B-bukan berarti aku menunggumu, ya! Hmph!'));
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
+
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
